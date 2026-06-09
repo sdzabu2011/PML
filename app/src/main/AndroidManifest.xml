@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- Ekran ustida chizish -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- Internet (kelajakda offset yangilash uchun) -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Boshqa ilovalar haqida ma'lumot olish -->
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
     
     <application
         android:allowBackup="true"
@@ -13,11 +17,12 @@
         <service
             android:name=".FloatingService"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="false" />
 
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
